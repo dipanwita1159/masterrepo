@@ -3,14 +3,14 @@ package com.mohs10.scripts;
 import org.testng.annotations.Test;
 
 import com.moh10.base.StartBrowser;
-import com.mohs10.reuse.Home;
+import com.mohs10.reuse.CommonFuns;
 
 	public class HomeTest extends StartBrowser{
 	
 	//Clicking on Categories links #4
 	@Test
 	public void CategoriesTest() throws Exception {
-		Home cat = new Home();
+		CommonFuns cat = new CommonFuns();
 	    cat.Categories();
 		Thread.sleep(5000);
 	}
@@ -18,7 +18,7 @@ import com.mohs10.reuse.Home;
 	//Clicking on news link #5
 	@Test
 	public void NewsbtnTestCase() throws Exception {
-		Home News = new Home();
+		CommonFuns News = new CommonFuns();
 	    News.Pagedown();
 	    Thread.sleep(2000);
 	    News.Newsbtn();
@@ -27,7 +27,7 @@ import com.mohs10.reuse.Home;
 	//blog Link #1
 	@Test
 	public void BlogbtnTestCase() throws Exception {
-		Home blog = new Home();
+		CommonFuns blog = new CommonFuns();
 	    blog.Pagedown();
 	    Thread.sleep(2000);
 	    blog.Blogbtn();
@@ -37,7 +37,7 @@ import com.mohs10.reuse.Home;
 	//Registration of new user #6
 	@Test
 	public void RegisterPageTestCase() throws Exception {
-			  Home hm = new Home();
+		CommonFuns hm = new CommonFuns();
 			  hm.Register("Manisha", "Koyla", "manishkoyla@hotmail.com", "Test@444", "Test@444");
 			  Thread.sleep(5000);
 		  }
@@ -45,7 +45,7 @@ import com.mohs10.reuse.Home;
 	//Testing with invalid inputs #2
 	@Test
 	public void InvalidLogInTestCase() throws Exception {
-			  Home hm1 = new Home();
+		CommonFuns hm1 = new CommonFuns();
 			  hm1.invalidLogIn("Invalidlogininputs@gmail.com", "Test@1114");
 			  Thread.sleep(5000);
 	
@@ -53,7 +53,7 @@ import com.mohs10.reuse.Home;
 	//Testing with Valid inputs #3
 	@Test
 		  public void LoginPageTestCase() throws Exception {
-			  Home hm2 = new Home();
+		CommonFuns hm2 = new CommonFuns();
 			  hm2.logIn("anishapatel44@gmail.com", "anishapatel123");
 			  Thread.sleep(5000);
 		  }
