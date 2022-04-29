@@ -26,7 +26,7 @@ public class Mercury_Info {
 	
 	System.out.println("Driver loaded");
 	
-	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/mercuryinfo","root","Hailey@700");
+	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/mercuryinfo","root","Password");
 	
 	System.out.println("Connected to MySQL DB");
 	
