@@ -18,7 +18,7 @@ public class User_info {
 	
 	System.out.println("Driver loaded");
 	
-	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfo","root","Hailey@700");
+	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfo","root","password");
 	
 	System.out.println("Connected to MySQL DB");
 	
