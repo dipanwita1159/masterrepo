@@ -2,7 +2,7 @@ package com.mohs10.scripts;
 
 import org.testng.annotations.Test;
 
-import com.moh10.base.StartBrowser;
+import com.mohs10.base.StartBrowser;
 import com.mohs10.reuse.CommonFuns;
 
 	public class HomeTest extends StartBrowser{
