@@ -1,4 +1,4 @@
-package com.mohs10.database_testing;
+/*package com.mohs10.database_testing;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -63,4 +63,4 @@ public class Mercury_Info {
 	   driver.quit();
 	  }
 
-}
+}*/
