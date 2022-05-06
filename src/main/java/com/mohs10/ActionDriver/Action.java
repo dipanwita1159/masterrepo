@@ -1,6 +1,5 @@
-package com.mohs10.actiondriver;
+package com.mohs10.ActionDriver;
 
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -24,9 +23,9 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.moh10.base.StartBrowser;
+import com.mohs10.base.StartBrowser;
 
-public class Action extends StartBrowser{
+public class Action extends com.mohs10.base.StartBrowser{
 public WebDriver driver;
 
 public Action()
