@@ -311,7 +311,7 @@ public void click(By locator, String eleName) throws Exception
 	}
 
 	
-	public boolean JSClick(WebDriver driver, WebElement ele) {
+	public boolean JSClick(WebDriver driver, WebElement ele)  throws Exception {
 		boolean flag = false;
 		try {
 			// WebElement element = driver.findElement(locator);
