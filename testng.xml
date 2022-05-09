@@ -3,10 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.gcr.scripts.AutomationContactUs"/>
-      <class name="com.gcr.scripts.AddProductToCart"/>
-      <class name="com.gcr.scripts.TizagAlert"/>
-      <class name="com.gcr.scripts.InternetWindow"/>
+      <class name="com.mohs10.scripts.HomeTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
