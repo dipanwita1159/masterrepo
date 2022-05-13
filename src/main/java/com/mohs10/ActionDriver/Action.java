@@ -809,6 +809,26 @@ public void click(By locator, String eleName) throws Exception
 	}
 	}
 	
+	/**
+	 * Get text from element
+	 * @param locator -- get it from OR
+	 * @param eleName
+	 * @return
+	 * @throws Exception
+	 */
+	public String getText(By locator, String eleName) throws Exception
+	{
+		try {
+			String text=driver.findElement(locator).getText();
+			StartBrowser.childTest.pass("Successfully got text from element : "+eleName + "And Text is : "+text);
+			 return text;
+		} catch (Exception e) {
+			StartBrowser.childTest.fail("Unable to performe type action action on :"+eleName,
+					MediaEntityBuilder.createScreenCaptureFromBase64String(screenShot()).build());
+			StartBrowser.childTest.info(e);
+			throw e;
+		}
+	}
 	
 
 }
