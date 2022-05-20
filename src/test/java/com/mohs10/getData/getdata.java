@@ -1,4 +1,4 @@
-package getData;
+package com.mohs10.getData;
 
 import org.testng.annotations.Test;
 
