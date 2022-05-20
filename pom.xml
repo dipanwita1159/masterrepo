@@ -68,5 +68,12 @@
 			<artifactId>fillo</artifactId>
 			<version>1.21</version>
 		</dependency>
+			<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>5.0.1</version>
+    
+</dependency>
 	</dependencies>
 </project>
