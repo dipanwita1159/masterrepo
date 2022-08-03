@@ -1,10 +1,10 @@
 package com.mohs10.scripts;
 
 import org.testng.annotations.Test;
-
+import com.mohs10.base.StartBrowser;
 import com.mohs10.reuse.Autoit_reuse;
 
-public class Autoit_test extends com.moh10.base.StartBrowser 
+public class Autoit_test extends StartBrowser
 {
 	@Test
 	public void uploadwordfile() throws Exception 
