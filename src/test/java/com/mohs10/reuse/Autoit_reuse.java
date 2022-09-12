@@ -1,4 +1,4 @@
-package com.mohs10.reuse;
+/*package com.mohs10.reuse;
 
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -45,4 +45,4 @@ public class Autoit_reuse
 		  
 		Thread.sleep(5000);
 	}
-}
+}*/
