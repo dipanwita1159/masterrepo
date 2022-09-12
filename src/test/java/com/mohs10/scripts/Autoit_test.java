@@ -1,4 +1,4 @@
-package com.mohs10.scripts;
+/*package com.mohs10.scripts;
 
 import org.testng.annotations.Test;
 import com.mohs10.base.StartBrowser;
@@ -14,4 +14,4 @@ public class Autoit_test extends StartBrowser
 		Thread.sleep(5000);
 	}
 	
-}
+}*/
