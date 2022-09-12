@@ -1,4 +1,4 @@
-package com.mohs10.or;
+/*package com.mohs10.or;
 
 import org.openqa.selenium.By;
 
@@ -9,4 +9,4 @@ public class Autoit_OR
 	public static By downloadbtn = By.xpath("//a[@id='pickfiles']");
 	
 
-}
+}*/
