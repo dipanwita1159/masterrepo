@@ -34,13 +34,13 @@ import com.mohs10.reuse.CommonFuns;
 		Thread.sleep(5000);
 	}
 	
-	//Registration of new user #6
+	/*//Registration of new user #6
 	@Test
 	public void RegisterPageTestCase() throws Exception {
 		CommonFuns hm = new CommonFuns();
 			  hm.Register("Manisha", "Koyla", "manishkoyla@hotmail.com", "Test@444", "Test@444");
 			  Thread.sleep(5000);
-		  }
+		  }*/
 	
 	//Testing with invalid inputs #2
 	@Test
