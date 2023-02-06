@@ -1,11 +1,25 @@
 package com.mohs10.ActionDriver;
 
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -14,19 +28,279 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebElement; 
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
+
 import com.mohs10.base.StartBrowser;
 
 public class Action extends com.mohs10.base.StartBrowser{
-public WebDriver driver;
+public static WebDriver driver;
+ WebElement ele;
+ WebElement element;
+ WebElement e;
+ //public Action aDriver=new Action();
+
+
+
+public void validateNumber(By locator,String mobNumber)   
+{  
+//validates phone numbers having 10 digits (9998887776)  
+	
+if (mobNumber.matches("\\d{10}"))  {
+ele=driver.findElement(locator);
+ele.sendKeys(mobNumber);}
+
+//validates phone numbers having digits, -, . or spaces  
+
+else if (mobNumber.matches("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{4}"))  
+{	ele=driver.findElement(locator);
+	ele.sendKeys(mobNumber);
+	}
+else if (mobNumber.matches("\\d{4}[-\\.\\s]\\d{3}[-\\.\\s]\\d{3}"))  
+{	ele=driver.findElement(locator);
+ele.sendKeys(mobNumber);}
+//validates phone numbers having digits and extension (length 3 to 5)  
+else if (mobNumber.matches("\\d{3}-\\d{3}-\\d{4}\\s(x|(ext))\\d{3,5}"))  
+{	ele=driver.findElement(locator);
+ele.sendKeys(mobNumber);}
+//validates phone numbers having digits and area code in braces  
+else if (mobNumber.matches("\\(\\d{3}\\)-\\d{3}-\\d{4}"))  
+{	ele=driver.findElement(locator);
+ele.sendKeys(mobNumber);}
+else if (mobNumber.matches("\\(\\d{5}\\)-\\d{3}-\\d{3}"))  
+{	ele=driver.findElement(locator);
+ele.sendKeys(mobNumber);}
+else if (mobNumber.matches("\\(\\d{4}\\)-\\d{3}-\\d{3}"))  
+{	ele=driver.findElement(locator);
+ele.sendKeys(mobNumber);} 
+//return false if any of the input matches is not found  
+else  
+{	ele=driver.findElement(locator);
+}  
+}
+
+
+public void zipcode(By locator, String zipCodeInput) {
+	//input will be 6 digit zipcode only
+	if (zipCodeInput.matches("\\d{6}")) {
+		ele=driver.findElement(locator);
+		ele.sendKeys(zipCodeInput);
+		System.out.println(zipCodeInput +" is the Zip code");
+		
+	}
+	else {
+		System.out.println("No zipcode is inputed");
+	}
+	
+}
+public void Emailid(By locator,String emailid) {
+	
+	  ArrayList<String> emails = new ArrayList<String>();
+	  emails.add(emailid);
+	 
+	
+    String regex = "^[A-Za-z0-9+_.-]+@(.+)$";  
+    //Compile regular expression to get the pattern  
+    Pattern pattern = Pattern.compile(regex);
+   // String pat=pattern.toString();//
+    //Iterate emails array list  
+	
+	for (String email : emails) { // Create instance of matcher Matcher matcher
+		Matcher matcher = pattern.matcher(email);
+		
+		System.out.println(email + " : " + matcher.matches());
+		
+		 if(matcher.matches()) {
+			  
+			  ele=driver.findElement(locator); 
+			  ele.sendKeys(emailid);
+			  
+			  System.out.println(emailid +" is the valid email");
+			  break;
+			  
+			  
+			  } else 
+			  { 
+				  System.out.println(email+" not a valid email id");
+				  }
+	  
+	  }
+	
+
+	 
+	 
+}
+
+//Method to capture the message showing in the console window while entering the data
+
+/*
+ * public void Email2(By locator, By locator1, By locator2, String Email, String
+ * classvalue) { ArrayList<String> emails = new ArrayList<String>();
+ * emails.add(Email);
+ * 
+ * String regex = "^[A-Za-z0-9+_.-]+@(.+)$"; // Compile regular expression to
+ * get the pattern Pattern pattern = Pattern.compile(regex); // String
+ * pat=pattern.toString();//
+ * 
+ * // Iterate emails array list for (String email : emails) { // Create instance
+ * of matcher Matcher matcher Matcher matcher = pattern.matcher(email);
+ * 
+ * System.out.println(email + " : " + matcher.matches()); ele =
+ * driver.findElement(locator); ele.sendKeys(Email); // ele.click(); e =
+ * driver.findElement(locator2); e.click(); element =
+ * driver.findElement(locator1); String str = element.getAttribute("class");
+ * 
+ * if (matcher.matches() && str.contains(classvalue)) { System.out.println(Email
+ * + " is the valid email"); Assert.assertTrue(false,
+ * "test of accordian passed"); } else { System.out.println(Email +
+ * " not a valid email id"); Assert.assertTrue(true,
+ * "test of accordian failed"); System.out.println(str);
+ * 
+ * } } }
+ */
+
+
+
+
+
+
+public void password(By locator,String pwd) {
+	 ArrayList<String> emails = new ArrayList<String>();
+	  emails.add(pwd);
+	  String regex = "^[A-Za-z0-9_@.%#*&!$]{7,17}$";  
+	    //Compile regular expression to get the pattern  
+	    Pattern pattern = Pattern.compile(regex);
+	   // String pat=pattern.toString();//
+	    //Iterate emails array list  
+		
+		for (String email : emails)
+		{ // Create instance of matcher Matcher matcher
+		Matcher matcher = pattern.matcher(email);
+			
+			System.out.println(email + " : " + matcher.matches());
+			
+			 if(matcher.matches()) {
+				  
+				  ele=driver.findElement(locator); 
+				  ele.sendKeys(pwd);
+				  System.out.println(pwd +" is the valid password");
+				  break;
+				  
+				  
+				  } else 
+				  { 
+					  System.out.println(email+" not a valid password");
+					  }
+		}
+		
+}
+public void age(By locator,String age) {
+	//input will be 6 digit age only
+		if (age.matches("^([1-9]).{0,1}$")) {
+			ele=driver.findElement(locator);
+			ele.sendKeys(age);
+			System.out.println(age +" is the age");
+			
+		}
+		else {
+			System.out.println("No age inputed");
+		}}
+		
+	/*
+	 * public void age1(By locator,int age) { //input will be 6 digit age only if
+	 * (age>0&& age<100) { ele=driver.findElement(locator);
+	 * 
+	 * ele.sendKeys(age); System.out.println(age +" is the age");
+	 * 
+	 * } else { System.out.println("No age inputed"); }
+	 */
+		
+	
+
+public void userId(By loactor,String UserId) {
+	 ArrayList<String> uID = new ArrayList<String>();
+	  uID.add(UserId);
+	 // String regex = "^((?=.*[A-Z])[a-zA-Z0-9_@.#*]){8,18}$"; 
+	  //String regex="^((?=.*[A-Z])[a-zA-Z\\d_$@#.]*).{8,18}$";
+	  String regex ="^[A-Z]\\w{7,9}$";
+	    //Compile regular expression to get the pattern  
+	    Pattern pattern = Pattern.compile(regex);
+	   // String pat=pattern.toString();//
+	    //Iterate emails array list  
+		
+		for (String email : uID)
+		{ // Create instance of matcher Matcher matcher
+		Matcher matcher = pattern.matcher(email);
+			
+			System.out.println(email + " : " + matcher.matches());
+			
+			 if(matcher.matches()) {
+				  
+			ele=driver.findElement(loactor);
+			ele.sendKeys(UserId);
+	      System.out.println(uID +" is the valid UserId");
+				  break;
+				  
+				  
+				  } else 
+				  { 
+					  System.out.println(email+" not a valid userId");
+					  }
+		}
+	
+}
+public void validate(By locator) {
+	Boolean orderID= driver.findElement(locator).isDisplayed();
+	Assert.assertTrue(orderID);
+	System.out.println(orderID+" is the value");
+			
+}
+
+/*
+ * public void Phone_number(By locator, String text,int phonenumber) {
+ * 
+ * //WebElement ele=driver.findElement(locator).getText().toInteger();
+ * 
+ * final int lowerBound=1000; final int upperbound=1000000000;}
+ */
+/*
+ * public void chooseElement(By locator,int x){
+ * 
+ * WebElement webElement; int y=Integer.x;
+ * 
+ * if (y>=1000000000&y<=10000000) { webElement=driver.findElement(locator);
+ * webElement.sendKeys(x); } else if(y>=100000&y<=10000){
+ * webElement=driver.findElement(locator); webElement.sendKeys(x);
+ * 
+ * } else if(y>=100&y<=0) { webElement=driver.findElement(locator);
+ * webElement.sendKeys(x); }
+ * 
+ * else { System.out.print("no input"); } return; }
+ */
+/*
+ * JTextField tf; Container container; JLabel label; public void
+ * JTextFieldValidation() { container = getContentPane(); setBounds(0, 0, 500,
+ * 300); tf = new JTextField(25); setLayout(new FlowLayout()); container.add(new
+ * JLabel("Enter the number")); container.add(tf); container.add(label = new
+ * JLabel()); label.setForeground(Color.red);
+ * setDefaultCloseOperation(EXIT_ON_CLOSE); setLocationRelativeTo(null);
+ * tf.addKeyListener(new KeyAdapter() { public void keyPressed(KeyEvent ke) {
+ * String value = tf.getText(); int l = value.length(); if (ke.getKeyChar() >=
+ * '0' && ke.getKeyChar() <= '9') { tf.setEditable(true); label.setText(""); }
+ * else { tf.setEditable(false);
+ * label.setText("* Enter only numeric digits(0-9)"); } } }); setVisible(true);
+ */
+
+
+
 
 public Action()
 {
@@ -65,7 +339,7 @@ public void click(By locator, String eleName) throws Exception
 }
 
 
-	public void scrollByVisibilityOfElement(WebDriver driver, WebElement ele) {
+	public void scrollByVisibilityOfElement(WebDriver driver, By ele) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", ele);
 
@@ -157,7 +431,7 @@ public void click(By locator, String eleName) throws Exception
 		try {
 			flag = ele.isDisplayed();
 			ele.clear();
-			ele.sendKeys(text);
+			ele .sendKeys(text);
 			// logger.info("Entered text :"+text);
 			flag = true;
 		} catch (Exception e) {
@@ -829,6 +1103,9 @@ public void click(By locator, String eleName) throws Exception
 			throw e;
 		}
 	}
+
+
+	
 	
 
 }
