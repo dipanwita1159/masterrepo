@@ -1,15 +1,13 @@
 package com.mohs10.scripts;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
+
 import org.testng.annotations.Test;
 
-import com.mohs10.ActionDriver.Action;
-import com.mohs10.base.StartBrowser;
-import com.mohs10.getData.getdata;
-import com.mohs10.or.HomePage;
-import com.mohs10.reuse.CommonFuns;
 
+import com.mohs10.base.StartBrowser;
+
+import com.mohs10.reuse.CommonFuns;
 
 public class HomeTest extends StartBrowser {
 	
