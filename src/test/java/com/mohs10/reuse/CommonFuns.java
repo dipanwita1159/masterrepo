@@ -87,11 +87,5 @@ public void addTocart() throws Exception {
 	aDriver.validate(HomePage.addtocart);
 	
 }
-/*
- * public void Emailvalidate(String userid) throws Exception {
- * StartBrowser.childTest=StartBrowser.parentTest.createNode(userid);
- * 
- * aDriver.Email2(HomePage.user,HomePage.capture,HomePage.click,userid,
- * "form-input-validation is-error"); }
- */
+
 }
