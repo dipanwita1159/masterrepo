@@ -1,16 +1,15 @@
 package com.mohs10.reuse;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+
+
 
 import com.mohs10.base.StartBrowser;
-import com.mohs10.ActionDriver.Action;
 import com.mohs10.or.HomePage;
+import com.mohs10.ActionDriver.Action;
+
 
 public class CommonFuns {
 
@@ -87,5 +86,10 @@ public void addTocart() throws Exception {
 	aDriver.validate(HomePage.addtocart);
 	
 }
+
+  
+ 
+
+
 
 }
