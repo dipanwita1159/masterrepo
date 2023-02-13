@@ -19,6 +19,8 @@
 
    <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
     </properties>
     <build>
         <plugins>
@@ -27,8 +29,11 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <!-- put your configurations here -->
-                </configuration>
+                   
+                <compilerArgs>
+                <arg>--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                </compilerArgs>
+               </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -100,6 +105,12 @@
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-lang3</artifactId>
     <version>3.12.0</version>
+</dependency>
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.24</version>
+    <scope>provided</scope>
 </dependency>
 
 
