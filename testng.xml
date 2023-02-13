@@ -1,9 +1,8 @@
-[Tuesday 12:54 PM] Dipanwita Chakraborty
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="TestSuite"  parallel="tests" >
+<suite name="TestSuite" parallel="tests">
 
 <test name="ChromeTest">
 
@@ -38,7 +37,7 @@
 
 <classes>
 
-<class name="com.mohs10.script.HomeTest">
+<class name="com.mohs10.scripts.HomeTest">
 
 </class>
 
@@ -48,6 +47,7 @@
 
 </suite>
 
-[Tuesday 12:59 PM] Karishma Barada
-its working 
+
+
+
 
